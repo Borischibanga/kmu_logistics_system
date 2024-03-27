@@ -25,4 +25,16 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function superAdmin()
+    {
+        return view('SuperAdmin.superAdmin');
+    }
+    public function driverOfficer()
+    {
+        return view('DriverOfficer.driverofficer');
+    }
+    public function student()
+    {
+        return view('Students.student');
+    }
 }
