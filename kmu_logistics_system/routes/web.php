@@ -23,3 +23,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('SuperAdmin/superAdmin', [App\Http\Controllers\HomeController::class, 'superAdmin'])->name('SuperAdmin.superAdmin');
 Route::get('DriverOfficer/driverofficer', [App\Http\Controllers\HomeController::class, 'driverofficer'])->name('DriverOfficer.driverofficer');
 Route::get('Students/student', [App\Http\Controllers\HomeController::class, 'student'])->name('Students.student');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
