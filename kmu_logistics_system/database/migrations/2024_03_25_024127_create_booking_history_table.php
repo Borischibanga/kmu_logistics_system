@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('booking_history', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('role')->default('super admin');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('student_no');
+            $table->string('seat');
+            $table->string('date');
+            $table->string('time');
+            $table->string('trip');
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('booking_history');
     }
 };

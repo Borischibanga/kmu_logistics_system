@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// routes/web.php
+
+// Routes for driver officers
+Route::get('/driverofficer', 'DriverOfficerController@index')->name('DriverOfficer.driverofficer');
+
+// Routes for students
+Route::get('/student', 'StudentController@index')->name('Students.student');
+
+// Routes for super admins
+Route::get('/superadmin', 'SuperAdminController@index')->name('SuperAdmin.superAdmin');
+
