@@ -16,14 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// routes/web.php
 
-Auth::routes();
+// Routes for driver officers
+Route::get('/driverofficer', 'DriverOfficerController@index')->name('DriverOfficer.driverofficer');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('SuperAdmin/superAdmin', [App\Http\Controllers\HomeController::class, 'superAdmin'])->name('SuperAdmin.superAdmin');
-Route::get('DriverOfficer/driverofficer', [App\Http\Controllers\HomeController::class, 'driverofficer'])->name('DriverOfficer.driverofficer');
-Route::get('Students/student', [App\Http\Controllers\HomeController::class, 'student'])->name('Students.student');
+// Routes for students
+Route::get('/student', 'StudentController@index')->name('Students.student');
 
-Auth::routes();
+// Routes for super admins
+Route::get('/superadmin', 'SuperAdminController@index')->name('SuperAdmin.superAdmin');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
