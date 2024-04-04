@@ -27,13 +27,13 @@ class RedirectIfAuthenticated
                 // Redirect based on user role
                 switch ($user->role) {
                     case 'driverofficer':
-                        return redirect('/Driverofficer/driverofficer');
+                        return redirect('/Driverofficer');
                         break;
                     case 'student':
-                        return redirect('/Students/student');
+                        return redirect('/Students');
                         break;
-                    case 'super admin':
-                        return redirect('/SuperAdmin/superAdmin');
+                    case 'superAdmin':
+                        return redirect('/SuperAdmin');
                         break;
                     default:
                         return redirect('/home');

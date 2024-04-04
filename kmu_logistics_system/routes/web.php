@@ -1,9 +1,12 @@
 <?php
+
 use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\DriverOfficerController;
-
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Auth\LoginController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,18 +28,15 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Auth::routes();
 
-Route::middleware('auth')->group(function () {
-    Route::get('/SuperAdmin', [SuperAdminController::class, 'Superadmin'])->name('SuperAdmin.superAdmin');
-    Route::patch('/Students', [StudentController::class, 'Student'])->name('Students.student');
-    Route::delete('/Driverofficer', [DriverOfficerController::class, 'Driverofficer'])->name('Driverofficer.driverofficer');
-});
-
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+Route::get('/adminHome', [HomeController::class, 'adminHome'])->name('adminHome');
+Route::get('/studentHome', [HomeController::class, 'studentHome'])->name('studentHome');
+Route::get('/driverHome', [HomeController::class, 'driverHome'])->name('driverHome')->middleware('is_admin');
 
 require __DIR__.'/auth.php';
+Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
