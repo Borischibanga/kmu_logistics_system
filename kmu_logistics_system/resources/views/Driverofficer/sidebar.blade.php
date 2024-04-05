@@ -13,33 +13,34 @@
         <li>
         <a href="#" onclick="setActiveClass(this)">
             <i class="bx bx-box"></i>
-            <span class="links_name">Available Computers</span>
+            <span class="links_name">Enable Booking</span>
+          </a>
+        </li>
+        <li>
+        <a href="#" onclick="setActiveClass(this)">
+            <i class="bx bx-box"></i>
+            <span class="links_name">Disable Booking</span>
           </a>
         </li>
         <li>
         <a href="#" onclick="setActiveClass(this)">
         <i class="bx bx-list-ul"></i>
-        <span class="links_name">Assigned Computers</span>
+        <span class="links_name">Set Trips</span>
     </a>
 </li>
         <li>
         <a href="#" onclick="setActiveClass(this)">
           <i class='bx bx-add-to-queue' ></i>
-            <span class="links_name">Register Class</span>
+            <span class="links_name">Control Seats</span>
           </a>
         </li>
         <li>
         <a href="#" onclick="setActiveClass(this)">
             <i class="bx bx-coin-stack"></i>
-            <span class="links_name">View Active User</span>
+            <span class="links_name">Booking List</span>
           </a>
         </li>
         <li>
-        <a href="#" onclick="setActiveClass(this)">
-            <i class="bx bx-message"></i>
-            <span class="links_name">Report Issues</span>
-          </a>
-        </li>
         <li class="log_out">
           <a href="{{ route('logout') }}">
               <i class="bx bx-log-out"></i>
