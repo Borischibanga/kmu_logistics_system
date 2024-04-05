@@ -18,18 +18,18 @@ class IsAdmin
     {
         {
             $isAdmin = auth()->user()->is_admin;
-    
+
             if ($isAdmin == 1) {
-                return $next($request);
+                return redirect()->route('superHome');
             } elseif ($isAdmin == 2) {
                 // Redirect to student home
-                return redirect()->route('studentHome');
+                return redirect()->route('driverHome');
             } elseif ($isAdmin == 3) {
                 // Redirect to driver home
-                return redirect()->route('driverHome');}
+                return redirect()->route('studentHome');}
                 else{
             return redirect('home')->with('error', 'You have no admin access.');
         }
-        return $next($request);
+
     }
     }}

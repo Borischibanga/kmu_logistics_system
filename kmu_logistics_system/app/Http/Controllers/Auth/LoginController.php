@@ -44,18 +44,18 @@ class LoginController extends Controller
                 'password'=>'required'
             ]);
             if(auth()->attempt(array('email'=>$input['email'], 'password'=>$input['password']))){
- if(auth()->user()->is_admin==1){
+ if(auth()->user()->is_admin== 1){
 return redirect()->route('adminHome');
  }
- else if(auth()->user()->is_admin==2){
+ else if(auth()->user()->is_admin== 2){
     return redirect()->route('driverHome');
      }
- 
- else{
+
+ else if (auth()->user()->is_admin== 3){
     return redirect()->route('studentHome');
  }
             }else{
-                return redirect()->route('login')->with('error','Input proper email/password.');
+                return redirect()->route('login');
             }
         }
     }

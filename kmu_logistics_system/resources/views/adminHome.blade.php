@@ -1,17 +1,19 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Super Admin| KMU</title>
+    @include('superAdmin.style')
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assest/img/favicon.ico" />
+    <link rel="stylesheet" href="assets/Dashboard/style.css">
+</head>
+<body>
+@include('superAdmin.sidebar')
+<div class="home-section">
+@include('superAdmin.header')
+@include('superAdmin.main-body')
+</div>
+@include('superAdmin.script')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're admin logged in!") }}
-                </div>
-            </div>
-        </div>
-    </div>
-</x-app-layout>
+</body>
+</html>
