@@ -434,10 +434,10 @@ ol{
 /* Responsive Media Query */
 @media (max-width: 1240px) {
   .sidebar{
-    width: 60px;
+    width: 60px !important;
   }
   .sidebar.active{
-    width: 220px;
+    width: 220px !important;
   }
   .home-section{
     width: calc(100% - 60px) !important;
