@@ -16,7 +16,7 @@ class HomeController extends Controller
         return view('studentHome');
     }
     public function driverHome(){
-        return view('drivertHome');
+        return view('driverHome');
     }
-    
+
 }

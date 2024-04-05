@@ -32,7 +32,7 @@ Auth::routes();
 
 Route::get('/adminHome', [HomeController::class, 'adminHome'])->name('adminHome');
 Route::get('/studentHome', [HomeController::class, 'studentHome'])->name('studentHome');
-Route::get('/driverHome', [HomeController::class, 'driverHome'])->name('driverHome')->middleware('is_admin');
+Route::get('/driverHome', [HomeController::class, 'driverHome'])->name('driverHome');
 
 require __DIR__.'/auth.php';
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
