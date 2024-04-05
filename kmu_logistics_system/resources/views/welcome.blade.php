@@ -58,23 +58,26 @@
                             <div style="align-items: center;">
                                <center> <h1 class="display-3 text-white animated slideInDown mb-4">WELCOME TO KMU <span class="text-primary">LOGISTICS</span></h1></center>
                                 <center>  <h5 class="text-white text-uppercase mb-3 animated slideInDown">#1 LIABLE SYSTEM</h5></center>
+                                <center>
+    @if (Route::has('login'))
+        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+            @auth
+                <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+            @else
+                <form action="{{ route('login') }}" method="GET">
+                    <button type="submit" class="text-sm text-gray-700 dark:text-gray-500 underline focus:outline-none"><b>Log in</b></button>
+                </form>
+                <br><br>
+                @if (Route::has('register'))
+                    <form action="{{ route('register') }}" method="GET">
+                        <button type="submit" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline focus:outline-none"><b>Register</b></button>
+                    </form>
+                @endif
+            @endauth
+        </div>
+    @endif
+</center>
 
-
-                               <center>
-                               @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a><br><br>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-                               </center>
                             </div>
                         </div>
                     </div>
