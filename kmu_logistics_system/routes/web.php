@@ -39,7 +39,7 @@ Route::get('Driverofficer/controlSeats', [DriverOfficerController::class, 'contr
 Route::get('Driverofficer/bookingList', [DriverOfficerController::class, 'bookingList'])->name('bookingList');
 Route::post('/setTrips', [DriverOfficerController::class, 'createTrips']);
 Route::post('/controlSeats', [DriverOfficerController::class, 'update']);
-
+Route::post('/trips/toggle-status/{id}', 'TripController@toggleStatus')->name('trips.toggleStatus');
 
 
 

@@ -15,12 +15,21 @@ class DriverOfficerController extends Controller
 
     public function bookings()
     {
-        return view('DriverOfficer/bookings');
+        $bookings=trips::all();
+        return view('DriverOfficer/bookings')->with('bookings',$bookings);
     }
     public function controlSeats()
     {
             $trip = trips::pluck('trip_name','id');
         return view('DriverOfficer/controlSeats', compact('trip'));
+    }
+    public function toggleStatus($id)
+    {
+        $trip = trips::findOrFail($id);
+        $trip->status = $trip->status === 'enabled' ? 'disabled' : 'enabled';
+        $trip->save();
+
+        return redirect()->back()->with('success', 'Trip status updated successfully.');
     }
     public function setTrips()
     {
