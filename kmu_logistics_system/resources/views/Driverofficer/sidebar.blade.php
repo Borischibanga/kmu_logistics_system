@@ -11,31 +11,25 @@
           </a>
         </li>
         <li>
-        <a href="#" onclick="setActiveClass(this)">
+        <a href="{{route('bookings')}}" onclick="setActiveClass(this)">
             <i class="bx bx-box"></i>
-            <span class="links_name">Enable Booking</span>
+            <span class="links_name">Manage Booking</span>
           </a>
         </li>
         <li>
-        <a href="#" onclick="setActiveClass(this)">
-            <i class="bx bx-box"></i>
-            <span class="links_name">Disable Booking</span>
-          </a>
-        </li>
-        <li>
-        <a href="#" onclick="setActiveClass(this)">
+        <a href="{{route('setTrips')}}" onclick="setActiveClass(this)">
         <i class="bx bx-list-ul"></i>
         <span class="links_name">Set Trips</span>
     </a>
 </li>
         <li>
-        <a href="#" onclick="setActiveClass(this)">
+        <a href="{{route('controlSeats')}}" onclick="setActiveClass(this)">
           <i class='bx bx-add-to-queue' ></i>
             <span class="links_name">Control Seats</span>
           </a>
         </li>
         <li>
-        <a href="#" onclick="setActiveClass(this)">
+        <a href="{{route('bookingList')}}" onclick="setActiveClass(this)">
             <i class="bx bx-coin-stack"></i>
             <span class="links_name">Booking List</span>
           </a>

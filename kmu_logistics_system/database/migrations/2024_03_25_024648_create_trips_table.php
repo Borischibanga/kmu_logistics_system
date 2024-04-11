@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
+            $table->string('trip_name');
+            $table->string('number_of_trips');
+            $table->string('status');
             $table->timestamps();
         });
     }
